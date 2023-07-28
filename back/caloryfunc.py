@@ -51,7 +51,7 @@ def protFatsCarbohyd(DCI): #Proteins Fats and Carbohydrates
     carbohydrates = round(carbohydrate_calories/4)
     message = f"Ваша денна норма калорій :{DCI}\n Щодня вам потрібно вживати:\n {proteins} г. білків,\n {fats} г. жирів,\n {carbohydrates} г. вуглеводів,"
     print(message)
-    return message
+    return {"DCI": DCI,"proteins": proteins, "fats": fats, "carbohydrates": carbohydrates}
 
 # mass =78
 # age=45

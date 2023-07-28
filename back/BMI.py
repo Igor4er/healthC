@@ -166,4 +166,4 @@ def calculate_bmi(height, weight, age, sex):
                 message += ", це показник ожиріння"
 
 
-    return message
+    return {"message": message, "bmi": bmi}
