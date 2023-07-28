@@ -20,7 +20,7 @@ module.exports = {
         "danger": "#dc3545",
       },
       healthc: { 
-        "primary": "#45a2d8",
+        "primary": "#20D586",
         "secondary": "#9cbef4", 
         "accent": "#794ed8",
         "neutral": "#2e222f",
