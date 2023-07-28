@@ -17,15 +17,15 @@ export default component$(() => {
                     </svg>
                 </div>
                     <div class="header_title ">
-                    <p class="text-4xl text-primary font-bold text-center">Health app</p> 
+                    <p class="text-4xl text-primary font-bold text-center">HealthC</p> 
                 </div>
             </div>
             <div class="header_text w-72 mt-6 ">
                 <p class="header_text_title text-xl font-semibold text-center">Ласкаво просимо!</p>
                 <p class="header_text_des font-base text-center mr-1">Представляємо онлайн додаток з вирахування вашого індекса тіла </p>
+                <Menu />
                 <p class="header_text_title_2 text-xl font-semibold text-center mt-6">Введіть ваші дані нижче:</p>
             </div>
-            <Menu />
         </div>
         
         

@@ -6,25 +6,25 @@ export default component$(() => {
     const action = useGetCalory();
     return (
         <>
-        <Form action={action}>
-            <label for="height">height</label>
-            <input type="text" name="height" class="bg-base-300"/>
+        <div class="flex flex-col items-center">
+            <Form action={action} class="mt-44">
+                <div class="flex flex-col gap-2">
+                    <input type="text" name="height" class="input input-bordered" placeholder="Висота"/>
 
-            <label for="weight">weight</label>
-            <input type="text" name="weight" class="bg-base-300" />
+                    <input type="text" name="weight" class="input input-bordered" placeholder="Вага" />
 
-            <label for="age">age</label>
-            <input type="text" name="age" class="bg-base-300" />
+                    <input type="text" name="age" class="input input-bordered" placeholder="Вік" />
 
-            <label for="sex">sex</label>
-            <input type="text" name="sex" class="bg-base-300" />
+                    <input type="text" name="sex" class="input input-bordered" placeholder="Стать" />
 
-            <label for="activity">activity</label>
-            <input type="text" name="activity" class="bg-base-300" />
-
-            <button type="submit">Add user</button>
-            {action.value?.ok && <p class="text-2xl text-black">({action.value.data.message}))</p>}
-        </Form>
+                    <button type="submit" class="btn btn-primary mt-2">Обрахувати</button>
+                </div>  
+            </Form>
+            {action.value?.ok && <div class="alert alert-info mt-3 w-72">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>{action.value.data.message}</span>
+            </div>}
+        </div>
         </>
     )
 });

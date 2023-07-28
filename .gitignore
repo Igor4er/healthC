@@ -66,3 +66,6 @@ lerna-debug.log*
 .yarn/*
 !.yarn/releases
 .venv
+dist/
+public/
+server/

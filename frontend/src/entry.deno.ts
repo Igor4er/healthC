@@ -11,7 +11,7 @@
 import { createQwikCity } from "@builder.io/qwik-city/middleware/deno";
 import qwikCityPlan from "@qwik-city-plan";
 import { manifest } from "@qwik-client-manifest";
-import render from "../src/entry.ssr";
+import render from "./entry.ssr";
 // @ts-ignore
 import { serve } from "https://deno.land/std@0.192.0/http/server.ts";
 

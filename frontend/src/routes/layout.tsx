@@ -3,8 +3,6 @@ import { routeLoader$, routeAction$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "~/components/Header";
-import Menu from "~/components/Menu";
-import Footer from "~/components/Footer";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -23,16 +21,18 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
-export const useGetBMI = routeAction$(async (data, requestEvent) => {
+export const useGetBMI = routeAction$(async (data) => {
   return fetch(`http://127.0.0.1:8000/bmi?height=${data.height}&weight=${data.weight}&age=${data.age}&sex=${data.sex}`).then((resp) => {
     return resp.json().then((d) => {return {"ok": resp.ok, "data": d}})
   })
 });
-export const useGetCalory = routeAction$(async (data, requestEvent) => {
+
+export const useGetCalory = routeAction$(async (data) => {
   return fetch(`http://127.0.0.1:8000/calory?height=${data.height}&weight=${data.weight}&age=${data.age}&sex=${data.sex}&activity=${data.activity}`).then((resp) => {
     return resp.json().then((d) => {return {"ok": resp.ok, "data": d}})
   })
 });
+
 
 export default component$(() => {
   return (
