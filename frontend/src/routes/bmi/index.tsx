@@ -1,10 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import BMIForm from "~/components/BMIForm"
 
 export default component$(() => {
     return (
         <>
         <div class="text-4xl">BMI</div>
+        <BMIForm />
         </>
     )
 })
