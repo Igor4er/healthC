@@ -6,9 +6,9 @@ import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-    <div class="p-10">
+    {/* <div class="p-10">
       <Link href="/bmi">Індекс маси тіла</Link>
-    </div>
+    </div> */}
     </>
   );
 });

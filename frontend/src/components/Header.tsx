@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import Menu from "~/components/Menu";
 
 export default component$(() => {
     return (
@@ -24,7 +25,9 @@ export default component$(() => {
                 <p class="header_text_des font-base text-center mr-1">Представляємо онлайн додаток з вирахування вашого індекса тіла </p>
                 <p class="header_text_title_2 text-xl font-semibold text-center mt-6">Введіть ваші дані нижче:</p>
             </div>
+            <Menu />
         </div>
+        
         
         </>
     )

@@ -6,7 +6,7 @@ export default component$(() => {
     const action = useGetBMI();
     return (
         <>
-        <Form action={action}>
+        <Form action={action} class="absolute top-[420px]">
             <label for="height">height</label>
             <input type="text" name="height" class="bg-base-300"/>
 

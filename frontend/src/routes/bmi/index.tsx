@@ -5,7 +5,6 @@ import BMIForm from "~/components/BMIForm"
 export default component$(() => {
     return (
         <>
-        <div class="text-4xl">BMI</div>
         <BMIForm />
         </>
     )
