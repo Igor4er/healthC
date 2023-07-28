@@ -19,6 +19,7 @@ export default component$(() => {
             <label for="sex">sex</label>
             <input type="text" name="sex" class="bg-base-300" />
             <button type="submit">Add user</button>
+            {action.value?.ok && (<p class="text-8xl text-black">({action.value.data})</p>)}
         </Form>
         </>
     )
