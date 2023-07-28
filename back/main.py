@@ -8,7 +8,10 @@ def calculate_imt(height: int, weight: float):
 
 
 @app.get("/foots/")
-def calculate_foots(age: int, activity: int, weight: float):
+def calculate_foots(age: int, sex: str, activity: int, height: int, weight: float):
     return {"age": age,
+    "sex": sex,
     "activity": activity,
-    "weight": weight}
+    "height": height,
+    "weight": weight,
+    }
