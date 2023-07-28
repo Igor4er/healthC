@@ -24,8 +24,13 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export const useGetBMI = routeAction$(async (data, requestEvent) => {
-  fetch(`http://127.0.0.1:8000/bmi?height=${data.height}&weight=${data.weight}&age=${data.age}&sex=${data.sex}`).then((resp) => {
-      return resp.json();
+  return fetch(`http://127.0.0.1:8000/bmi?height=${data.height}&weight=${data.weight}&age=${data.age}&sex=${data.sex}`).then((resp) => {
+    return resp.json().then((d) => {return {"ok": resp.ok, "data": d}})
+  })
+});
+export const useGetCalory = routeAction$(async (data, requestEvent) => {
+  return fetch(`http://127.0.0.1:8000/calory?height=${data.height}&weight=${data.weight}&age=${data.age}&sex=${data.sex}&activity=${data.activity}`).then((resp) => {
+    return resp.json().then((d) => {return {"ok": resp.ok, "data": d}})
   })
 });
 
