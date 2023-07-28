@@ -3,7 +3,7 @@ import { Form } from '@builder.io/qwik-city';
 import { useGetCalory } from "~/routes/layout";
 
 export default component$(() => {
-    const action = useGetBMI();
+    const action = useGetCalory();
     return (
         <>
         <Form action={action}>
@@ -21,7 +21,7 @@ export default component$(() => {
 
             <label for="activity">activity</label>
             <input type="text" name="activity" class="bg-base-300" />
-            
+
             <button type="submit">Add user</button>
             {action.value?.ok && <p class="text-2xl text-black">({action.value.data.message}))</p>}
         </Form>
