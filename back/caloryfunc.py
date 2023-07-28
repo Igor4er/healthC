@@ -29,15 +29,14 @@ def fisicalActivity():
 
 
 #знаходження основного обміну
-def findCalories(mass, age, height, man_or_woman): # маса тіла в кг , вік в роках , ріст в сантиметрах, стать 'man'/ 'woman'
+def findCalories(mass, age, height, sex, activity): # маса тіла в кг , вік в роках , ріст в сантиметрах, стать 'man'/ 'woman'
     DCI = 0 # Daily calorie intake
     mass_height_age = mass* 10 + height*6.25 - age*5
-    coefficient_of_activity = fisicalActivity()
 
-    if man_or_woman == 'woman':
-        DCI = (mass_height_age - 161) * coefficient_of_activity
-    elif man_or_woman =='man':
-        DCI = (mass_height_age +5) * coefficient_of_activity
+    if sex == 'woman':
+        DCI = (mass_height_age - 161) * activity
+    elif sex =='man':
+        DCI = (mass_height_age +5) * activity
 
 
     return DCI
@@ -47,17 +46,16 @@ def protFatsCarbohyd(DCI): #Proteins Fats and Carbohydrates
     protein_calories = part
     fat_calories = part
     carbohydrate_calories = part * 4
-    proteins = protein_calories/4
-    fats = fat_calories/9
-    carbohydrates = carbohydrate_calories/4
-    print(
-        f"Ваша денна норма калорій :{DCI}\n Щодня вам потрібно вживати:\n {proteins} г. білків,\n {fats} г. жирів,\n {carbohydrates} г. вуглеводів,"
-    )
+    proteins = round(protein_calories/4)
+    fats = round(fat_calories/9)
+    carbohydrates = round(carbohydrate_calories/4)
+    message = f"Ваша денна норма калорій :{DCI}\n Щодня вам потрібно вживати:\n {proteins} г. білків,\n {fats} г. жирів,\n {carbohydrates} г. вуглеводів,"
+    print(message)
+    return message
 
-
-mass =78
-age=45
-height=175
-man_or_woman='woman'
-DCI=findCalories(mass, age, height, man_or_woman)
-protFatsCarbohyd(DCI)
+# mass =78
+# age=45
+# height=175
+# man_or_woman='woman'
+# DCI=findCalories(mass, age, height, man_or_woman)
+# protFatsCarbohyd(DCI)

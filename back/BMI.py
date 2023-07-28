@@ -1,4 +1,4 @@
-def calculate_bmi(height, weight, age, gender):
+def calculate_bmi(height, weight, age, sex):
     #перевірка
     if not isinstance(height, (int, float)):
         try:
@@ -18,14 +18,14 @@ def calculate_bmi(height, weight, age, gender):
         except ValueError:
             return "Помилка: Невірний формат віку"
 
-    if gender.lower() not in ("male", "female"):
-        return "Помилка: Стать повинна бути 'male' або 'female'"
+    if sex.lower() not in ("man", "woman"):
+        return "Помилка: Стать повинна бути 'man' або 'woman'"
 
-    bmi = weight / (height ** 2)
+    bmi = round(weight / ((height/100) ** 2), 2)
     message = f"Ваш індекс маси тіла: {bmi}"
     is_good = bmi
 
-    if gender == "male":
+    if sex == "man":
         if age <= 8:
             is_good += 4
             if is_good <= 18.5:
@@ -95,7 +95,7 @@ def calculate_bmi(height, weight, age, gender):
                 message += ", це показник надмірної маси"
             else:
                 message += ", це показник ожиріння"
-    elif gender == "female":
+    elif sex == "woman":
         if age <= 8:
             is_good += 2
             if is_good <= 18.5:
