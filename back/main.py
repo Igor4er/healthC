@@ -18,11 +18,7 @@ def calculate_calories(age: int, sex: str, activity: int, height: int, weight: f
 
 
 @app.get("/steps/")
-def calculate_steps(age: int, sex: str, activity: int, height: int, weight: float):
+def calculate_steps():
     # Method for calculting optimal counts of steps
-    return {"age": age,
-    "sex": sex,
-    "activity": activity,
-    "height": height,
-    "weight": weight,
+    return {"message": "Рекомендована кількість кроків 10000 незалежно від віку, статі та ваги"
     }
